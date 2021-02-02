@@ -124,3 +124,6 @@ public class TestAnimal {
 ## UML-діаграма
 
 ![Done](https://github.com/ppc-ntu-khpi/35-inheritance-KyshynetsVlad/blob/master/images/SchemaPng.png "Done")
+
+## Скріни
+![Done](https://github.com/ppc-ntu-khpi/35-inheritance-KyshynetsVlad/blob/master/Scrins/2.png)
