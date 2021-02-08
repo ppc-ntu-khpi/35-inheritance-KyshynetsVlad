@@ -130,4 +130,4 @@ public class TestAnimal {
 
 
 ## Документація
-[Сайт](https://ppc-ntu-khpi.github.io/35-inheritance-KyshynetsVlad/)
+[Сайт](https://ppc-ntu-khpi.github.io/35-inheritance-KyshynetsVlad)
