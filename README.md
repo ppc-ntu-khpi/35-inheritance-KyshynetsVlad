@@ -1,27 +1,133 @@
 # Практична робота "Реалізація успадкування"
-Цей репозиторій містить приклад виконання та інструкції для виконання практичної роботи з наслідування в JAVA. 
 
-Для прикладу я змоделював **звичайнісінького кота**😉
+![Done](https://github.com/ppc-ntu-khpi/35-inheritance-KyshynetsVlad/blob/master/Scrins/1.jpg "Done")
 
-<img src="https://github.com/ppc-ntu-khpi/Inheritance-Starter/blob/master/images/cat.jpg" width="100%"/>
-<img src="https://github.com/ppc-ntu-khpi/Inheritance-Starter/blob/master/images/Cat-Diagram.png" width="100%"/>
 
-## В рамках практичної роботи ви маєте зробити наступне:
-1. подумайте, які риси та поведінка притаманні всім без винятку тваринам 
-2. оберіть будь-яку тварину (не стримуйте свою фантазію😉)
-2. з допомогою **easyUML** для Netbeans або **StarUML** створіть діаграму класів для обраної тварини. Ви маєте отримати шось подібне до прикладу з цього репозиторію.
-3. згенеруйте каркасний код на основі діаграми
-4. допрацюйте код - *всі методи мають виводити на екран повідомлення про те, що робить тварина!*
-5. створіть тестовий клас, в методі **main** якого створіть об'єкт класу тварини та викличіть його методи
-3. завантажте ваш код до до теки **src** вашого репозиторію (замінивши код прикладу). Експортовану (в PNG) діаграму завантажте в теку **images** та додайте в **Readme** (не забудьте в ньому описати що за тварину ви обрали)
-4. здайте завдання. **УВАГА! Не забудьте, здаючи завдання через Google Classroom, вказати посилання на Ваш репозиторій!**
+# Виконання:
 
-## Відеодемонстрація виконання практичної
+## Умова
+<b>Я описав мавпу з іменем Єржан<b>
 
-<p align="center">
-<a href="https://www.youtube.com/watch?v=SFSC1omkE8Q&feature=youtu.be" target="_blank"><img src="https://img.youtube.com/vi/SFSC1omkE8Q/0.jpg"/></a>
-</p>
+# Код:
 
-Не забувайте, що ви можете обговорювати завдання в девелоперському мессенджері **Gitter** - у відповідній [чат-кімнаті](https://gitter.im/PPC-SE-2020/OOP?utm_source=share-link&utm_medium=link&utm_campaign=share-link).
+## Animal:
+```java
+package domain;
 
-[![Gitter](https://badges.gitter.im/PPC-SE-2020/OOP.svg)](https://gitter.im/PPC-SE-2020/OOP?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+public class Animal {
+
+    protected String name;
+
+    protected int weight;
+
+    protected int height;
+
+    public Animal() {
+        name = "generic animal";
+        weight = 100;
+        height = 150;
+    }
+
+    public void eat() {
+        System.out.println("Animal eating..."); 
+    }
+
+    public void speak() {
+        System.out.println("Animal speaking...");
+    }
+
+    @Override
+    public String toString() {
+        return "Animal:" + "\nName:\t" + name + "\nweight:\t" + weight + " kg" + "\nheight:\t" + height + " kg";
+    }
+}
+``` 
+## BananaEater:
+```java
+package domain;
+
+public class BananaEater extends Animal {
+
+    public void EatABanana() {
+        System.out.println("Banana eater is eating bananas...");
+    }
+}
+``` 
+## Monkey:
+```java
+package domain;
+
+public class Monkey extends BananaEater {
+
+    private String kind;
+
+    public Monkey(String name, int weight, int height, String kind) {
+        this.name = name;
+        this.weight = weight;
+        this.height = height;
+        this.kind = kind;
+    }
+
+    public Monkey() {
+        this("Humanoid", 50, 120, "Primate");
+    }
+
+    public Monkey(String name) {
+        this(name, 50, 120, "Primate");
+    }
+    
+    
+
+    public void sleep() {
+        System.out.println("Primate is sleeping...");
+    }
+
+    @Override
+    public void EatABanana() {
+        System.out.println("Primate is eating a banana...");
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+"\nkind:\t"+this.kind+"\n\nThis is a monkey";
+    }
+
+    @Override
+    public void speak() {
+        System.out.println("Primate speaking sign language...");
+    }
+
+    @Override
+    public void eat() {
+        System.out.println("Primate eats lasagna...");
+    }
+}
+``` 
+## TestAnimal:
+```java
+package test;
+
+import domain.Monkey;
+
+public class TestAnimal {
+
+    public static void main(String[] args) {
+        Monkey monkey = new Monkey("Yerzhan");
+        System.out.println(monkey);
+        monkey.EatABanana();
+        monkey.sleep();
+        monkey.eat();
+        monkey.speak();
+    }
+}
+``` 
+## UML-діаграма
+
+![Done](https://github.com/ppc-ntu-khpi/35-inheritance-KyshynetsVlad/blob/master/images/SchemaPng.png "Done")
+
+## Скріни
+![Done](https://github.com/ppc-ntu-khpi/35-inheritance-KyshynetsVlad/blob/master/Scrins/2.png)
+
+
+## Документація
+[Сайт](https://ppc-ntu-khpi.github.io/35-inheritance-KyshynetsVlad)
