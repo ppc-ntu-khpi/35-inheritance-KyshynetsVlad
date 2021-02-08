@@ -127,3 +127,7 @@ public class TestAnimal {
 
 ## Скріни
 ![Done](https://github.com/ppc-ntu-khpi/35-inheritance-KyshynetsVlad/blob/master/Scrins/2.png)
+
+
+## Документація
+[Сайт](https://ppc-ntu-khpi.github.io/35-inheritance-KyshynetsVlad/)
